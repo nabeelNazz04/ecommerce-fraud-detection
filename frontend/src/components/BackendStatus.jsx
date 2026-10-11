@@ -5,7 +5,8 @@ export function BackendStatus() {
     const [status, setStatus] = useState('Checking backend...');
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/health')
+        const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+        fetch(`${apiBaseUrl}/api/health`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Backend request failed');
