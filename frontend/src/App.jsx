@@ -5,6 +5,7 @@ import { DashboardView } from './pages/DashboardView';
 import { TransactionsView } from './pages/TransactionsView';
 import { GraphExplorerView } from './pages/GraphExplorerView';
 import { ModelEvaluationView } from './pages/ModelEvaluationView';
+import { BackendStatus } from './components/BackendStatus';
 import './App.css';
 
 export function App() {
@@ -80,6 +81,9 @@ export function App() {
           onToggleSidebar={() => setIsSidebarCollapsed((prev) => !prev)}
           onMobileOpenSidebar={() => setIsMobileSidebarOpen(true)}
         />
+
+        {/* Backend Connection Status */}
+        <BackendStatus />
 
         {/* Dynamic Page Content */}
         <main className="dashboard-main-body" id="main-content">
