@@ -6,7 +6,9 @@ import { TransactionsView } from './pages/TransactionsView';
 import { GraphExplorerView } from './pages/GraphExplorerView';
 import { ModelEvaluationView } from './pages/ModelEvaluationView';
 import { BackendStatus } from './components/BackendStatus';
+import { TransactionValidator } from './components/TransactionValidator';
 import './App.css';
+import { SavedTransactions } from './components/SavedTransactions';
 
 export function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -14,6 +16,7 @@ export function App() {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [focusedTxnId, setFocusedTxnId] = useState(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const handleSelectTxnForGraph = (txnId) => {
     setFocusedTxnId(txnId);
@@ -88,6 +91,16 @@ export function App() {
         {/* Dynamic Page Content */}
         <main className="dashboard-main-body" id="main-content">
           {renderActiveView()}
+
+          <div style={{ padding: '24px' }}>
+            <TransactionValidator
+              onTransactionSaved={() =>
+                setRefreshTrigger((previous) => previous + 1)
+              }
+            />
+
+            <SavedTransactions refreshTrigger={refreshTrigger} />
+          </div>
         </main>
       </div>
     </div>
