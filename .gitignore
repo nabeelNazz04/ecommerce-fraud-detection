@@ -26,3 +26,15 @@ data/*
 .DS_Store
 Thumbs.db
 backend/transactions.db
+
+# Local datasets and downloaded source data
+/ieee-fraud-detection/
+
+# Local Neo4j Desktop installation and files
+/Neo4j Desktop 2/
+
+# Generated GraphSAGE experiment outputs
+/experiments/graphsage/prepared/
+
+# Local model artifacts and experiment outputs
+/experiments/graphsage/checkpoints/

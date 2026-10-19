@@ -1,0 +1,32 @@
+{
+  "dataset": "IEEE-CIS Fraud Detection",
+  "strategy": "chronological",
+  "fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "partitions": {
+    "train": {
+      "rows": 413378,
+      "first_transaction_id": 2987000,
+      "last_transaction_id": 3400377,
+      "first_timestamp": 86400,
+      "last_timestamp": 10437996
+    },
+    "validation": {
+      "rows": 88581,
+      "first_transaction_id": 3400378,
+      "last_transaction_id": 3488958,
+      "first_timestamp": 10438003,
+      "last_timestamp": 13151840
+    },
+    "test": {
+      "rows": 88581,
+      "first_transaction_id": 3488959,
+      "last_transaction_id": 3577539,
+      "first_timestamp": 13151880,
+      "last_timestamp": 15811131
+    }
+  }
+}
